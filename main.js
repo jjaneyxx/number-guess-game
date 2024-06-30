@@ -10,7 +10,7 @@ resatButton.addEventListener("click", () => {
   goButton.disabled = false; // 버튼 활성화
   document.getElementById("input-number").value = ""; // 입력창 초기화
   chanceArea.textContent = `기회가 5번 있음 🤗 `; // 기회창 초기화
-  resultArea.textContent = "숫자를 입력해주세요"; // 결과창 초기화
+  resultArea.textContent = "1~100 사이 숫자를 입력하세요"; // 결과창 초기화
   count = 5; // 도전 횟수 초기화
   gameImage.src = "./images/main.gif";
   pickRandomNum();
