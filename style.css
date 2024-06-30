@@ -8,8 +8,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height : 100vh; 
-  background-color : rgb(80, 80, 144);  
-  color : white; 
+  background-color : rgb(100, 98, 98); 
+  color : white;   
 }
 
 h1 {

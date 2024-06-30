@@ -9,10 +9,10 @@ goButton.addEventListener("click", compareNum);
 resatButton.addEventListener("click", () => {
   goButton.disabled = false; // 버튼 활성화
   document.getElementById("input-number").value = ""; // 입력창 초기화
-  chanceArea.textContent = `기회가 5번 있음🤗 `; // 기회창 초기화
-  resultArea.textContent = "소원을 빌고 싶다면, 숫자를 맞추세요!"; // 결과창 초기화
+  chanceArea.textContent = `기회가 5번 있음 🤗 `; // 기회창 초기화
+  resultArea.textContent = "숫자를 입력해주세요"; // 결과창 초기화
   count = 5; // 도전 횟수 초기화
-  gameImage.src = "./images/genie.jpg";
+  gameImage.src = "./images/main.gif";
   pickRandomNum();
 });
 
@@ -38,8 +38,8 @@ function compareNum() {
   if (count < 1) {
     goButton.disabled = true;
     chanceArea.textContent = `기회가 모두 소진됨`;
-    resultArea.textContent = `정답은 ${computerNum}이였음 😓`;
-    gameImage.src = "./images/failed.jpg";
+    resultArea.textContent = `정답은 ${computerNum} 😓`;
+    gameImage.src = "./images/failed.gif";
     return;
   } else {
     chanceArea.textContent = `기회가 ${count}번 남음`;
@@ -48,15 +48,15 @@ function compareNum() {
   if (computerNum > inputNum) {
     resultArea.textContent = "UP ⬆️";
     console.log("UP");
-    gameImage.src = "./images/up.jpg";
+    gameImage.src = "./images/up.gif";
   } else if (computerNum < inputNum) {
     resultArea.textContent = "DOWN ⬇️";
     console.log("Down");
-    gameImage.src = "./images/down.jpg";
+    gameImage.src = "./images/down.gif";
   } else if (computerNum === inputNum) {
     resultArea.textContent = "정답입니다 🔥";
     console.log("정답");
     goButton.disabled = true;
-    gameImage.src = "./images/correct.jpg";
+    gameImage.src = "./images/correct.gif";
   }
 }
