@@ -64,7 +64,7 @@ function compareNum() {
   } else if (computerNum === inputNum) {
     resultArea.textContent = "정답입니다 🔥";
     resultArea.style.color = "white";
-    chanceArea.textContent = "축하합니다 !!!";
+    chanceArea.textContent = "축하한다냥 !!!";
     console.log("정답");
     goButton.disabled = true;
     gameImage.src = "./images/correct.gif";
