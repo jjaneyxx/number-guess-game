@@ -7,13 +7,20 @@ let userInput = document.getElementById("input-number");
 let guessList = document.getElementById("guess-list");
 let answerButton = document.getElementById("answer-button");
 let history = [];
-let count = 3; // 도전 가능한 기회 횟수
+let count = 5; // 도전 가능한 기회 횟수
 
 goButton.addEventListener("click", compareNum);
 answerButton.addEventListener("click", checkAnswer);
 
 userInput.addEventListener("focus", () => {
   userInput.value = "";
+});
+
+userInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    compareNum(); // Go 버튼을 클릭했을 때와 같은 함수 호출
+    userInput.value = "";
+  }
 });
 
 resatButton.addEventListener("click", resat);
@@ -96,10 +103,10 @@ function checkAnswer() {
 function resat() {
   goButton.disabled = false; // 버튼 활성화
   document.getElementById("input-number").value = ""; // 입력창 초기화
-  chanceArea.textContent = `기회가 3번이나 있다냥 🤗 `; // 기회창 초기화
+  chanceArea.textContent = `기회가 5번이나 있다냥 🤗 `; // 기회창 초기화
   resultArea.textContent = "고양이가 생각하는 숫자를 맞혀보세요"; // 결과창 초기화
   resultArea.style.color = "white";
-  count = 3; // 도전 횟수 초기화
+  count = 5; // 도전 횟수 초기화
   gameImage.src = "./images/main.gif";
   history = []; // 배열도 초기화
   guessList.textContent = ""; // 입력한 숫자들 초기화
